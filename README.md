@@ -735,28 +735,6 @@ prompt-shield benchmark performance -n 100
 
 ---
 
-## Research: Novel Cross-Domain Techniques (v0.4.0)
-
-[![arXiv](https://img.shields.io/badge/arXiv-2604.18248-b31b1b.svg)](https://arxiv.org/abs/2604.18248) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19644135.svg)](https://doi.org/10.5281/zenodo.19644135)
-
-**Paper:** *Beyond Pattern Matching: Seven Cross-Domain Techniques for Prompt Injection Detection* — preprint on arXiv (cs.CR + cs.CL) with an empirical evaluation section added in v2.0. Prior-art analysis, mechanisms, and published reproduction harness.
-
-- :page_facing_up: **[arXiv preprint](https://arxiv.org/abs/2604.18248)** (canonical, latest, peer-citable)
-- :globe_with_meridians: [Zenodo record](https://zenodo.org/records/19644135) (DOI-anchored, v1.0)
-- :page_facing_up: [Read the v1.0 PDF](docs/papers/cross-domain-techniques.pdf) (in-repo snapshot)
-- :page_facing_up: [v2.0 DOCX](docs/papers/cross-domain-techniques-v2.docx) (in-repo, matches the arXiv version)
-- :memo: [Markdown source](docs/research-post-cross-domain-techniques.md) (browse on GitHub)
-- :books: [`CITATION.cff`](CITATION.cff) (auto-rendered by GitHub's *Cite this repository* sidebar)
-
-**Cite as:**
-> Munirathinam, T. (2026). *Beyond Pattern Matching: Seven Cross-Domain Techniques for Prompt Injection Detection.* arXiv:2604.18248 [cs.CR]. https://arxiv.org/abs/2604.18248
-
-> **Implementation status: 2 of 7 shipped** — d028 Smith-Waterman alignment (v0.4.0 phase 4) and adversarial fatigue tracker (v0.4.0 phase 2). Both empirically validated — see [`docs/papers/evaluation/`](docs/papers/evaluation/). 5 in development.
->
-> These techniques draw from fields outside LLM security. Each is either genuinely novel in application to prompt injection, or a new runtime implementation of a method explored only statically or in research. Prior art is credited per-technique below. We welcome peer review, feedback, and contributions.
-
-The core insight behind v0.4.0 is that prompt injection detection has converged on two approaches -- regex patterns and ML classifiers -- both of which break under adaptive adversaries (see [NAACL 2025](https://aclanthology.org/2025.findings-naacl.395/), [ICLR 2025](https://openreview.net/forum?id=7B9mTg7z25)). We looked to other disciplines for fundamentally different detection signals.
-
 ### 1. Stylometric Discontinuity Detection (Forensic Linguistics)
 
 **The problem:** Indirect prompt injections embed attacker instructions inside otherwise benign content (documents, emails, RAG chunks). Pattern matchers miss them because the malicious text doesn't contain known attack keywords.
